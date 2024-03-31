@@ -6,7 +6,7 @@
   min-height: 230px;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 200px 1fr 1fr;
+  grid-template-rows: 270px 1fr 1fr;
   position: relative;
 
   @include respond-to($media-xs) {
@@ -17,9 +17,8 @@
   &__image {
     height: 100%;
     width: 100%;
-    background-size: cover;
-    object-fit: cover;
-    object-position: center;
+    background-size: contain;
+    background-position: center;
     background-repeat: no-repeat;
     box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
     border-radius: 5px;
