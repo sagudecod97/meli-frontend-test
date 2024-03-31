@@ -28,8 +28,9 @@ export const SearchProvider = ({ children }) => {
 
   const fetchSearchResults = async () => {
     try {
+      setIsLoading(true);
       const results = await getSearchResults();
-      console.log("Fetched results: ", results);
+      setIsLoading(false);
       setSearchResults(results);
     } catch (err) {
       console.log("Error fetching results: ", err);
@@ -37,7 +38,7 @@ export const SearchProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    if (!initialRender) {
+    if (!initialRender && searchInput.length) {
       fetchSearchResults();
     } else {
       setInitialRender(false);

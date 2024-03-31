@@ -4,5 +4,5 @@ export const getSearchResults = () =>
   new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(searchResultsMock);
-    }, 1500);
+    }, 3000);
   });
