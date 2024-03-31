@@ -1,13 +1,16 @@
 import "./search-results.scss";
-import ResultCard from "../../components/result-card/result-card";
+import { useContext } from "react";
+import { SearchContext } from "../../context/search.context";
 
-import { searchResultsMock } from "../../data/searchResults";
+import ResultCard from "../../components/result-card/result-card";
+import WelcomeMessage from "../../components/welcome-message/welcome-message";
 
 const SearchResults = () => {
-  const resultsLength = searchResultsMock.length - 1;
+  const { searchResults } = useContext(SearchContext);
+  const resultsLength = searchResults.length - 1;
   return (
     <section className="search-results">
-      {searchResultsMock.map((result, index) => {
+      {searchResults.map((result, index) => {
         return (
           <>
             <ResultCard key={result.id} resultInfo={result} />
@@ -17,6 +20,8 @@ const SearchResults = () => {
           </>
         );
       })}
+
+      {!searchResults.length && <WelcomeMessage />}
     </section>
   );
 };

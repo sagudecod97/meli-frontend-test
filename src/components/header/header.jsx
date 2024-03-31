@@ -17,6 +17,7 @@ const Header = () => {
           <SearchBar />
         </Link>
       </header>
+
       <main>
         <Outlet />
       </main>
