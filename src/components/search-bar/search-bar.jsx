@@ -9,7 +9,7 @@ const SearchBar = () => {
         placeholder="Nunca dejes de buscar"
       />
       <button className="search__button">
-        <span class="material-symbols-outlined">search</span>
+        <span className="material-symbols-outlined">search</span>
       </button>
     </form>
   );

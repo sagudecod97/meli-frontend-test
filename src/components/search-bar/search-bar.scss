@@ -12,8 +12,8 @@
     padding: size(10px) size(15px);
     flex: 1;
     border: none;
-    border-top-left-radius: size(2px);
-    border-bottom-left-radius: size(2px);
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
     font-size: size(16px);
     font-family: $lato-ligth;
   }
@@ -21,8 +21,8 @@
   &__button {
     height: size(34px);
     border: none;
-    border-top-right-radius: size(2px);
-    border-bottom-right-radius: size(2px);
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
     display: flex;
     justify-content: center;
     align-items: center;
