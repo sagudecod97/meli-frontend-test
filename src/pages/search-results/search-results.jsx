@@ -4,10 +4,12 @@ import { SearchContext } from "../../context/search.context";
 
 import ResultCard from "../../components/result-card/result-card";
 import WelcomeMessage from "../../components/welcome-message/welcome-message";
+import LoadingComponent from "../../components/loading-component/loading-component";
 
 const SearchResults = () => {
-  const { searchResults } = useContext(SearchContext);
+  const { searchResults, isLoading } = useContext(SearchContext);
   const resultsLength = searchResults.length - 1;
+
   return (
     <section className="search-results">
       {searchResults.map((result, index) => {
@@ -22,6 +24,8 @@ const SearchResults = () => {
       })}
 
       {!searchResults.length && <WelcomeMessage />}
+
+      {isLoading && <LoadingComponent isOpen={isLoading} />}
     </section>
   );
 };
