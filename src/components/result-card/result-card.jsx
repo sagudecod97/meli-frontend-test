@@ -7,10 +7,11 @@ const ResultCard = (props) => {
   } = props;
 
   return (
-    <div title={title} className="result-card" to={`/product/${id}`}>
+    <div title={title} className="result-card">
       <div
         className="result-card__image"
         style={{ backgroundImage: `url(${picture})` }}
+        alt={`${title}`}
       />
 
       <div className="details">
