@@ -2,7 +2,7 @@ import "./result-card.scss";
 
 const ResultCard = (props) => {
   const {
-    resultInfo: { title, price, picture, condition, free_shipping },
+    resultInfo: { title, price, picture, free_shipping },
   } = props;
 
   return (
