@@ -1,6 +1,6 @@
 export const searchResultsMock = [
   {
-    id: "MLA1380804577",
+    id: "MLA1380804575",
     title: "Raqueta Tenis Head Mx Cyber Elite Aluminio Tennis Pro ",
     price: {
       currency: "ARS",
@@ -24,7 +24,7 @@ export const searchResultsMock = [
     free_shipping: false,
   },
   {
-    id: "MLA1380804577",
+    id: "MLA1380804574",
     title: "Raqueta Tenis Head Mx Cyber Elite Aluminio Tennis Pro ",
     price: {
       currency: "ARS",
@@ -36,7 +36,7 @@ export const searchResultsMock = [
     free_shipping: true,
   },
   {
-    id: "MLA1380804577",
+    id: "MLA1380804573",
     title: "Raqueta Tenis Head Mx Cyber Elite Aluminio Tennis Pro ",
     price: {
       currency: "ARS",
@@ -48,7 +48,7 @@ export const searchResultsMock = [
     free_shipping: false,
   },
   {
-    id: "MLA1380804577",
+    id: "MLA1380804571",
     title: "Raqueta Tenis Head Mx Cyber Elite Aluminio Tennis Pro ",
     price: {
       currency: "ARS",

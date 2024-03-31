@@ -8,10 +8,11 @@
   max-width: size(1215px);
   margin: 0 auto;
   border-radius: 2px;
+  padding: 0 size(25px);
 
   &__separator {
     border: 2px solid $whitesmoke;
     width: 100%;
-    margin: 0 15px;
+    margin: 0;
   }
 }
