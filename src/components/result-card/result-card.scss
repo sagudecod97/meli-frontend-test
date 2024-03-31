@@ -4,10 +4,10 @@
 .result-card {
   width: 100%;
   min-height: 230px;
-  padding: size(25px) 0;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 200px 1fr 1fr;
+  cursor: pointer;
 
   @include respond-to($media-xs) {
     grid-template-columns: 200px 2fr;
