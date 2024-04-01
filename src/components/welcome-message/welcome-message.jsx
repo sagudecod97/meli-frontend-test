@@ -10,7 +10,7 @@ const WelcomeMessage = () => {
         buscar.
       </p>
 
-      <span class="welcome-message__icon material-symbols-outlined">
+      <span className="welcome-message__icon material-symbols-outlined">
         sentiment_satisfied
       </span>
     </div>

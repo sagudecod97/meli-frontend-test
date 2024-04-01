@@ -8,14 +8,16 @@ const Header = () => {
   return (
     <>
       <header className="header">
-        <Link to="/" className="header__container">
-          <div
-            className="header__logo"
-            style={{ backgroundImage: `url(${MercadoLibreLogo})` }}
-          />
+        <div className="header__container">
+          <Link to="/">
+            <div
+              className="header__logo"
+              style={{ backgroundImage: `url(${MercadoLibreLogo})` }}
+            />
+          </Link>
 
           <SearchBar />
-        </Link>
+        </div>
       </header>
 
       <main>
