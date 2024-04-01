@@ -61,8 +61,18 @@
 
   &__price {
     font-family: $lato-regular;
-    font-size: size(42px);
     padding-top: size(10px);
+    display: flex;
+    align-items: flex-start;
+
+    &-amount {
+      font-size: size(42px);
+    }
+
+    &-decimals {
+      font-size: size(21px);
+      padding: size(10px) 0 0 size(3px);
+    }
   }
 
   &__buy {
