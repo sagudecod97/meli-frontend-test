@@ -37,7 +37,6 @@ const ProductDetail = () => {
   };
 
   useEffect(() => {
-    console.log("Product Id to look: ", productId);
     fetchProductDetails();
   }, []);
 
@@ -56,12 +55,17 @@ const ProductDetail = () => {
           <div className="product-detail__container">
             <p className="product-detail__details">
               <span>{conditionValues[condition]}</span> - {sold_quantity}{" "}
-              vendidos
+              Vendidos
             </p>
 
             <h1 className="product-detail__title">{title}</h1>
 
-            <p className="product-detail__price">&#36; {price.amount}</p>
+            <div className="product-detail__price">
+              <p className="product-detail__price-amount">
+                &#36; {price.amount}
+              </p>
+              <p className="product-detail__price-decimals">{price.decimals}</p>
+            </div>
 
             <button className="product-detail__buy">Comprar</button>
           </div>
