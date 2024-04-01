@@ -16,10 +16,11 @@ export const getSearchResults = async (query) => {
     const results = {
       categories: formatCategories(response.filters),
       items: response.results.map(formatItems).slice(0, 4),
+      totalResults: response.paging.total,
     };
 
     return results;
-  } catch (err) {
-    console.log(err);
+  } catch (error) {
+    throw error;
   }
 };
