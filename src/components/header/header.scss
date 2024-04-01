@@ -12,6 +12,10 @@
     gap: size(15px);
     max-width: size(1200px);
     margin: 0 auto;
+
+    @include respond-to($media-lg) {
+      padding: size(12px) 0 size(8px) 0;
+    }
   }
 
   &__logo {

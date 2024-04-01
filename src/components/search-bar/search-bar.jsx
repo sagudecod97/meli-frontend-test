@@ -1,9 +1,11 @@
 import "./search-bar.scss";
 import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/search.context";
 
 const SearchBar = () => {
-  const { setSearchInput } = useContext(SearchContext);
+  const { setSearchInput, searchInput } = useContext(SearchContext);
+  const navigate = useNavigate();
 
   const [searchValue, setSearchValue] = useState("");
 
@@ -15,7 +17,11 @@ const SearchBar = () => {
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
-    setSearchInput(searchValue);
+
+    if (!!searchValue.length && searchInput !== searchValue) {
+      setSearchInput(searchValue);
+      navigate("/");
+    }
   };
 
   return (

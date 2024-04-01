@@ -22,7 +22,6 @@ export const SearchProvider = ({ children }) => {
     searchInput,
     setSearchInput,
     isLoading,
-    setIsLoading,
     searchResults,
   };
 
@@ -30,10 +29,10 @@ export const SearchProvider = ({ children }) => {
     try {
       setIsLoading(true);
       const results = await getSearchResults();
-      setIsLoading(false);
       setSearchResults(results);
-    } catch (err) {
-      console.log("Error fetching results: ", err);
+      setIsLoading(false);
+    } catch (error) {
+      console.log("Error fetching results: ", error);
     }
   };
 
