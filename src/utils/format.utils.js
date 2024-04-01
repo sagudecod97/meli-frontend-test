@@ -1,3 +1,5 @@
+import { getDecimals } from "../utils/helpers.utils";
+
 export const formatCategories = (filtersArray) => {
   if (!filtersArray.length) return [];
 
@@ -22,7 +24,7 @@ export const formatItems = (item) => {
     price: {
       currency: item.currency_id,
       amount: item.price,
-      decimals: (item.price % 1).toFixed(2).split(".")[1],
+      decimals: getDecimals(item.price),
     },
     picture: item.thumbnail,
     condition: item.condition,
