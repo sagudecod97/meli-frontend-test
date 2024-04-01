@@ -12,8 +12,6 @@ export const getProductDetails = async (productId) => {
     );
     const responseDescription = await requestDescription.json();
 
-    console.log("responseDetails: ", responseDetails);
-
     return {
       item: {
         id: responseDetails.id,

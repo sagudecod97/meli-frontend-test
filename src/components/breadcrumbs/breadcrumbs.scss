@@ -1,0 +1,25 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.breadcrumbs {
+  max-width: size(1200px);
+  margin: 0 auto;
+  padding-bottom: size(15px);
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: size(10px);
+    padding: 0 size(10px);
+
+    &-link {
+      font-family: $lato-ligth;
+      font-size: size(16px);
+      color: $cool-gray;
+    }
+  }
+}
+
+.--bolder {
+  font-family: $lato-regular;
+}

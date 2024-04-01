@@ -5,9 +5,8 @@ const INITAL_CONTEXT = {
   searchInput: "",
   setSearchInput: () => null,
   isLoading: false,
-  setIsLoading: () => null,
   searchResults: [],
-  setSearchResults: () => null,
+  categories: [],
 };
 
 export const SearchContext = createContext(INITAL_CONTEXT);
@@ -16,6 +15,7 @@ export const SearchProvider = ({ children }) => {
   const [searchInput, setSearchInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [initialRender, setInitialRender] = useState(true);
 
   const value = {
@@ -23,13 +23,15 @@ export const SearchProvider = ({ children }) => {
     setSearchInput,
     isLoading,
     searchResults,
+    categories,
   };
 
   const fetchSearchResults = async () => {
     try {
       setIsLoading(true);
-      const results = await getSearchResults(searchInput);
-      setSearchResults(results.items);
+      const { items, categories } = await getSearchResults(searchInput);
+      setSearchResults(items);
+      setCategories(categories);
       setIsLoading(false);
     } catch (error) {
       console.log("Error fetching results: ", error);

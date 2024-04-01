@@ -2,6 +2,7 @@ import "./header.scss";
 import { Outlet, Link } from "react-router-dom";
 
 import SearchBar from "../search-bar/search-bar";
+import Breadcrumbs from "../breadcrumbs/breadcrumbs";
 import MercadoLibreLogo from "../../assets/images/mercadolibre-logo.png";
 
 const Header = () => {
@@ -19,6 +20,10 @@ const Header = () => {
           <SearchBar />
         </div>
       </header>
+
+      <aside>
+        <Breadcrumbs />
+      </aside>
 
       <main>
         <Outlet />
