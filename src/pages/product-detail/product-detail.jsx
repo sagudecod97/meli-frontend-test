@@ -4,10 +4,12 @@ import { useParams } from "react-router-dom";
 import { getProductDetails } from "../../services/getProductDetails";
 
 import LoadingComponent from "../../components/loading-component/loading-component";
+import Message from "../../components/message/message";
 
 const ProductDetail = () => {
   const [productDetails, setProductDetails] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  const [notFound, setNotFound] = useState(false);
 
   const { productId } = useParams();
 
@@ -25,13 +27,26 @@ const ProductDetail = () => {
     used: "Usado",
   };
 
+  const messageProps = {
+    title: "El producto no fue encontrado",
+    message: "Lo sentimos, el producto que estabas buscando no fue encontrado.",
+    iconSad: true,
+  };
+
   const fetchProductDetails = async () => {
     try {
       setIsLoading(true);
-      const { item } = await getProductDetails(productId);
+      const item = await getProductDetails(productId);
+
+      if (!item) {
+        setNotFound(true);
+        return setIsLoading(false);
+      }
+
       setProductDetails(item);
       setIsLoading(false);
     } catch (error) {
+      setIsLoading(false);
       console.log("Error fetching product details", error);
     }
   };
@@ -42,7 +57,15 @@ const ProductDetail = () => {
 
   return (
     <section className="product-detail">
-      {!isLoading ? (
+      {notFound && (
+        <Message
+          title={messageProps.title}
+          message={messageProps.message}
+          sad={messageProps.iconSad}
+        />
+      )}
+
+      {!isLoading && !notFound ? (
         <>
           <div className="product-detail__picture">
             <img
