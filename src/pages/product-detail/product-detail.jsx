@@ -28,7 +28,7 @@ const ProductDetail = () => {
   const fetchProductDetails = async () => {
     try {
       setIsLoading(true);
-      const { item } = await getProductDetails();
+      const { item } = await getProductDetails(productId);
       setProductDetails(item);
       setIsLoading(false);
     } catch (error) {
