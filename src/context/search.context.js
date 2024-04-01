@@ -28,8 +28,8 @@ export const SearchProvider = ({ children }) => {
   const fetchSearchResults = async () => {
     try {
       setIsLoading(true);
-      const results = await getSearchResults();
-      setSearchResults(results);
+      const results = await getSearchResults(searchInput);
+      setSearchResults(results.items);
       setIsLoading(false);
     } catch (error) {
       console.log("Error fetching results: ", error);
