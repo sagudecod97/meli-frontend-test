@@ -1,0 +1,27 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.header {
+  margin-bottom: size(15px);
+  background-color: $meli-yellow;
+
+  &__container {
+    padding: size(12px) size(10px) size(8px) size(10px);
+    display: flex;
+    justify-content: center;
+    gap: size(15px);
+    max-width: size(1200px);
+    margin: 0 auto;
+
+    @include respond-to($media-lg) {
+      padding: size(12px) 0 size(8px) 0;
+    }
+  }
+
+  &__logo {
+    height: size(44px);
+    width: size(50px);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}

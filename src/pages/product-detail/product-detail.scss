@@ -1,0 +1,115 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.product-detail {
+  background-color: $white;
+  width: 100%;
+  max-width: size(1215px);
+  margin: 0 auto;
+  border-radius: 3px;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+  padding: size(25px);
+
+  @include respond-to($media-sm) {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: auto auto auto;
+
+    .message {
+      grid-column: 1 / 4;
+      grid-row: 1 / 3;
+    }
+  }
+
+  &__picture {
+    width: 100%;
+    height: size(400px);
+    overflow: hidden;
+
+    @include respond-to($media-sm) {
+      height: size(600px);
+      width: 70%;
+      grid-column: 1 / 4;
+      grid-row: 1 / 2;
+    }
+
+    &-img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+
+      @include respond-to($media-sm) {
+        min-height: 400px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  &__container {
+    padding: size(20px);
+    @include respond-to($media-sm) {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__details {
+    font-size: size(16px);
+    font-family: $lato-ligth;
+  }
+
+  &__title {
+    font-size: size(20px);
+    font-family: $lato-bold;
+  }
+
+  &__price {
+    font-family: $lato-regular;
+    padding-top: size(10px);
+    display: flex;
+    align-items: flex-start;
+
+    &-amount {
+      font-size: size(42px);
+    }
+
+    &-decimals {
+      font-size: size(21px);
+      padding: size(10px) 0 0 size(3px);
+    }
+  }
+
+  &__buy {
+    width: 100%;
+    padding: size(15px);
+    border: none;
+    border-radius: size(3px);
+    margin-top: size(40px);
+    background-color: $blue;
+    color: $white;
+    font-size: size(16px);
+    cursor: pointer;
+  }
+
+  &__subtitle {
+    font-family: $lato-bold;
+    font-size: size(18px);
+    padding: size(35px) 0 size(15px) 0;
+
+    @include respond-to($media-sm) {
+      grid-column: 1 / 3;
+      grid-row: 2 / 3;
+    }
+  }
+
+  &__description {
+    font-family: $lato-regular;
+    font-size: size(16px);
+
+    @include respond-to($media-sm) {
+      grid-column: 1 / 2;
+      grid-row: 3 / 4;
+    }
+  }
+}

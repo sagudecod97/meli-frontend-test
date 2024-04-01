@@ -1,0 +1,24 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  &__title {
+    padding-bottom: size(30px);
+    text-align: center;
+  }
+
+  &__paragraph {
+    max-width: 500px;
+    text-align: center;
+    padding-bottom: size(30px);
+  }
+
+  &__icon {
+    font-size: size(50px);
+  }
+}
