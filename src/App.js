@@ -10,8 +10,8 @@ function App() {
     <div className="app">
       <Routes>
         <Route path="/" element={<Header />}>
-          <Route index element={<SearchResults />} />
-          <Route path="/product/:productId" element={<ProductDetail />} />
+          <Route path="/items" element={<SearchResults />} />
+          <Route path="/items/:productId" element={<ProductDetail />} />
         </Route>
       </Routes>
     </div>
