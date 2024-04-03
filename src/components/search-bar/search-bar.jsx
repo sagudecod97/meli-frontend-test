@@ -1,5 +1,5 @@
 import "./search-bar.scss";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/search.context";
 
@@ -17,12 +17,17 @@ const SearchBar = () => {
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
+    const encodedStringQuery = encodeURIComponent(searchValue);
 
     if (!!searchValue.length && searchInput !== searchValue) {
       setSearchInput(searchValue);
-      navigate("/");
+      navigate(`/items?search=${encodedStringQuery}`);
     }
   };
+
+  useEffect(() => {
+    setSearchValue(searchInput);
+  }, [searchInput]);
 
   return (
     <form className="search">

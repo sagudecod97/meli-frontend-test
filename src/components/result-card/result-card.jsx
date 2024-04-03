@@ -24,7 +24,7 @@ const ResultCard = (props) => {
         <p className="details__location">Mendoza</p>
       </div>
 
-      <Link className="result-card__link" to={`/product/${id}`}>
+      <Link className="result-card__link" to={`/items/${id}`}>
         <h2 className="result-card__link-title">{title}</h2>
       </Link>
     </div>
