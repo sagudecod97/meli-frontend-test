@@ -32,8 +32,4 @@ export const formatItems = (item) => {
   };
 };
 
-export const formatQuery = (query) => {
-  const splitQuery = query.split(" ");
-
-  return splitQuery.join("+");
-};
+export const formatQuery = (query) => encodeURIComponent(query);
